@@ -142,3 +142,10 @@ p {
   border-style: solid;
   border-radius: 18px;
 }
+
+img{
+  width: 80%;
+  padding-top: 2%;
+  padding-left: 10%;
+  padding-bottom: 1%;
+}

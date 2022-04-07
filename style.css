@@ -34,8 +34,29 @@ section {
 }
 /*******Sections Ende*******/
 
+form {
+  color:#161616;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 1%;
+  text-align: left;
+  font-size: 25px;
+}
 
+#field {
+  margin-bottom: 3%;
+  padding-top: 2%;
+  padding-left: 10%;
+  padding-bottom: 1%;
+  text-align: left;
+  border: none;
+  border-radius: 10px;
+  font-size: 40px; 
+}
 
+label {
+  font-size: 40px; 
+}
 
 /********* H1 Klassen*****/
 h1 {
@@ -48,7 +69,7 @@ h1 {
   color: #78f9e6;
 }
 
-.warenkorbh1{
+.warenkorbh1 {
   color:#161616;
   padding-top: 5%;
   padding-left: 10%;

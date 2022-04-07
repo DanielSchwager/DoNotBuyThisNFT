@@ -12,21 +12,22 @@
       <h1 class="warenkorbh1">Warenkorb</h1>
       <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
       <script src="contract.js"></script>
-      <form onsubmit="return connect()">
+      <form>
         <label for="fname">Public wallet key</label><br>
-        <input type="text" id="idfield" name="fname" value=""><br>
+        <input type="text" class="field" name="fname" value=""><br>
         <label for="lname">Legal name</label><br>
-        <input type="text" id="namefield" name="fname" value=""><br>
+        <input type="text" id="name" class="field" name="fname" value=""><br>
         <label for="fname">Private wallet key</label><br>
-        <input type="text" id="field" name="lname" value=""><br>
+        <input type="text" class="field" name="lname" value=""><br>
         <label for="fname">Amount of keyboardbuttons</label><br>
-        <input type="text" id="field" name="fname" value=""><br>
+        <input type="text" class="field" name="fname" value=""><br>
         <label for="fname">Your age minus ten</label><br>
-        <input type="text" id="field" name="fname" value=""><br>
+        <input type="text" class="field" name="fname" value=""><br>
         <br>
-        <input class="button" type="submit" value="Submit" href="../captcha.html">
+        <button class="button" onclick="connect()">Submit</button>
       </form> 
-      <button class="button" onclick="connect()"></button>
-      <div class="button-forntpage">
+      <!-- <input class="button" type="submit" value="Submit" href="../captcha.html"> -->
+      
+      <!-- <div class="button-forntpage"> -->
   </body>
 </html>

@@ -1,5 +1,3 @@
-const { redirect } = require("statuses");
-
 var web3js = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'))
 
 var contract;
@@ -26,7 +24,6 @@ fetch("build/contracts/Dontbuy.json")
     abi = data.abi;
     address = data.networks[5777].address;
     contractdata = data;
-
   })
   .catch(error => console.log(error));
 
@@ -34,26 +31,17 @@ async function buyNFT() {
   accounts = await web3js.eth.getAccounts();
   nonce = await web3js.eth.getTransactionCount(address, 'latest');
   contract.methods.mint(accounts[0],"Marc").send({from:accounts[0]});
-  
 }
 
 function connect()
 {
   console.log("connecting")
-  let name = document.getElementById("namefield").value;
+  let name = document.getElementById("name").value;
   console.log(name)
   if(name.length > 0)
   {
-    if(!window.ethereum.isConnected())
-    {
-      window.ethereum.enable();
-    }
-
-    if(window.ethereum.isConnected())
-    {
+    window.ethereum.enable().then(function(){
       window.location.href = "captcha.html";
-    }
+    })
   }
 }
-
-

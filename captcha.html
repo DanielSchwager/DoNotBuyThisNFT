@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <title>Dont Buy this NFT Landing Page</title>
   </head>
   <body>
     <section class="captcha">
       <h1 class="captchah1">Captcha</h1>
-
-    <div class="captcharect"></div>
-    
-
-      <div class="button-forntpage">
-        <a class="button" href="danke.html">Buy Now!</a>
+      <div class="captcharect"></div>
+        <div class="button-forntpage">
+          <a class="button" href="danke.html">Buy Now!</a>
+          <a class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit' data-action='submit'>Submit</a>
       </div>
+    </div>
     </section>
-    <section2> </section2>
+     <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
   </body>
 </html>

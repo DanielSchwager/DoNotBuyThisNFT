@@ -49,6 +49,22 @@ section {
   background-color: #78f9e6;
 }
 
+div.top {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  align-items: center;
+  background: #171717;
+}
+
+div.bottom {
+  position: relative;
+  width: 100%;
+  height: 69%;
+  align-items: center;
+  background: #171717;
+}
+
 div.leftside {
   float: left;
   position: relative;

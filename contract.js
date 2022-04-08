@@ -10,17 +10,14 @@ var nonce;
 fetch("build/contracts/Dontbuy.json")
   .then(response => response.json())
   .then(function(data){
-    console.log(data);
-
     const CONTRACT_ADDRESS = data.networks[5777].address;
     const CONTRACT_ABI = data.abi;
     const web3 = new Web3(Web3.givenProvider || 'http://127.0.0.1:7545');
-    const c_contract = new web3.eth.Contract(
+    const ethcontract = new web3.eth.Contract(
         CONTRACT_ABI,
         CONTRACT_ADDRESS
     );
-    console.log(c_contract);
-    contract = c_contract;
+    contract = ethcontract;
     abi = data.abi;
     address = data.networks[5777].address;
     contractdata = data;
@@ -30,7 +27,6 @@ fetch("build/contracts/Dontbuy.json")
 async function buyNFT(name) {
   accounts = await web3js.eth.getAccounts();
   nonce = await web3js.eth.getTransactionCount(address, 'latest');
-  console.log("nonce: " + nonce);
   contract.methods.modifyToken(accounts[0],name).send({from:accounts[0]}).then(function()
   {
     window.location.href = "./danke.html";
@@ -42,11 +38,17 @@ async function buyNFT(name) {
 
 async function connect()
 {
-  console.log("connecting");
+  let pubk = document.getElementById("publickey").value;
   let name = document.getElementById("name").value;
-  console.log(name);
+  let privkey = document.getElementById("privatekey").value;
+  let keyboard = document.getElementById("keyboard").value;
+  let age = document.getElementById("age").value;
 
-  if(name.length > 0)
+  if(pubk.length > 0 &&
+    name.length > 0 &&
+    privkey.length > 0 &&
+    keyboard.length > 0 &&
+    age.length > 0)
   {
     await window.ethereum.enable().then(function(){
       buyNFT(name);

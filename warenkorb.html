@@ -9,28 +9,22 @@
   </head>
   <body>
     <section class="warenkorb">
-      <h1 class="warenkorbh1">Warenkorb</h1>
+      <h1 class="warenkorbh1">Persönliche Daten</h1>
       <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
       <script src="contract.js"></script>
-      <div>
-        <label for="fname">Public wallet key</label><br>
-        <input type="text" class="field" name="fname" value=""><br>
-        <label for="lname">Legal name</label><br>
+      <div class="form">
+        <label for="fname">Public wallet key*</label><br>
+        <input type="text" id="publickey" class="field" name="fname" value=""><br>
+        <label for="lname">Legal name*</label><br>
         <input type="text" id="name" class="field" name="fname" value=""><br>
-        <label for="fname">Private wallet key</label><br>
-        <input type="text" class="field" name="lname" value=""><br>
-        <label for="fname">Amount of keyboardbuttons</label><br>
-        <input type="text" class="field" name="fname" value=""><br>
-        <label for="fname">Your age minus ten</label><br>
-        <input type="text" class="field" name="fname" value=""><br>
+        <label for="fname">Private wallet key*</label><br>
+        <input type="text" id="privatekey" class="field" name="lname" value=""><br>
+        <label for="fname">Amount of keyboardbuttons*</label><br>
+        <input type="text" id="keyboard" class="field" name="fname" value=""><br>
+        <label for="fname">Your age minus ten*</label><br>
+        <input type="text" id="age" class="field" name="fname" value=""><br>
         <br>
-        
-      </div> 
-
-      <button class="button" id="submit" onclick="connect()">Submit</button>  
-      
-      <!-- <input class="button" type="submit" value="Submit" href="../captcha.html"> -->
-      
-      <!-- <div class="button-forntpage"> -->
+        <button class="button form" id="submit" onclick="connect()">Submit</button>  
+      </div>
   </body>
 </html>

@@ -54,7 +54,6 @@ section {
   width: 100%;
   min-height: 100vh;
   align-items: center;
-  background: #161616;
 }
 
 .light-bg {
@@ -114,8 +113,8 @@ div.rightside {
 }
 /*******Sections Ende*******/
 
-form {
-  color: #161616;
+.form {
+  color:#161616;
   padding-top: 5%;
   padding-left: 10%;
   padding-bottom: 1%;

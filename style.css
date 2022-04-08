@@ -12,16 +12,12 @@ span.light {
 
 /********* H1 Klassen*****/
 h1 {
-  padding-top: 7%;
+  padding-top: 5%;
   padding-left: 10%;
   padding-bottom: 3%;
   text-align: left;
-  font-size: 64px;
+  font-size: 65px;
   color: #78f9e6;
-}
-
-.h1-black {
-  color: #161616;
 }
 
 p {
@@ -32,24 +28,37 @@ p {
   font-size: 27px;
   color: #ffffff;
   max-width: 100%;
+<<<<<<< Updated upstream
 =======
   line-height: 150%;
   letter-spacing: 1px;
   text-align: justify;
 }
+
+.p1-highlight {
+  color: #78f9e6;
+  border: black;
+}
 .dark {
   color: #161616;
+>>>>>>> Stashed changes
+}
+.light {
+  background-color: #78f9e6;
 }
 
 /*******Sections*******/
 section {
   position: relative;
-  width: 100%;
+  width: 55%;
   min-height: 100vh;
   align-items: center;
   background: #161616;
 }
 
+<<<<<<< Updated upstream
+.section2 {
+=======
 div.top {
   position: relative;
   width: 100%;
@@ -64,9 +73,6 @@ div.bottom {
   width: 100%;
   min-height: 68vh;
   align-items: center;
-=======
-.light-bg {
-  background-color: #78f9e6;
 }
 
 div.leftside {
@@ -77,6 +83,22 @@ div.leftside {
   align-items: center;
   background: #171717;
 }
+
+div.rightside {
+  float: left;
+>>>>>>> Stashed changes
+  position: relative;
+  width: 45%;
+  min-height: 100vh;
+  align-items: center;
+  background: red;
+}
+.boredmarc {
+<<<<<<< Updated upstream
+  width: 40%;
+  margin-top: -90%;
+  margin-left: 45%;
+=======
   text-align: center;
   padding-top: 29%;
 }
@@ -84,24 +106,7 @@ div.leftside {
 .boredmarcimg {
   padding-right: 17%;
   width: 65%;
-=======
-
-div.rightside {
-  float: left;
-  position: relative;
-  width: 40%;
-  min-height: 100vh;
-  align-items: center;
-  background: #171717;
-}
-.boredmarc {
-  text-align: center;
-  padding-top: 30%;
-}
-
-.boredmarcimg {
-  width: 62%;
->>>>>>> css-änderungen
+>>>>>>> Stashed changes
 }
 
 .warenkorb {
@@ -114,7 +119,7 @@ div.rightside {
 /*******Sections Ende*******/
 
 form {
-  color: #161616;
+  color:#161616;
   padding-top: 5%;
   padding-left: 10%;
   padding-bottom: 1%;
@@ -130,11 +135,31 @@ input.field {
   text-align: left;
   border: none;
   border-radius: 10px;
-  font-size: 40px;
+  font-size: 40px; 
 }
 
 label {
-  font-size: 40px;
+  font-size: 40px; 
+}
+
+/********* H1 Klassen*****/
+h1 {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 1%;
+  text-align: left;
+  /*font-size: 74px;*/
+  font-size: 50px;
+}
+
+.warenkorbh1 {
+  color:#161616;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 1%;
+  text-align: left;
+  /*font-size: 74px;*/
+  font-size: 50px;
 }
 /********* H1 Klassen Ende*****/
 
@@ -199,9 +224,9 @@ label {
   border-radius: 18px;
 }
 
-/* img {
+img {
   width: 80%;
   padding-top: 2%;
   padding-left: 10%;
   padding-bottom: 1%;
-} */
+}

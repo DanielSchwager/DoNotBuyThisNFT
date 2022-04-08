@@ -27,21 +27,32 @@ fetch("build/contracts/Dontbuy.json")
   })
   .catch(error => console.log(error));
 
-async function buyNFT() {
+async function buyNFT(name) {
   accounts = await web3js.eth.getAccounts();
   nonce = await web3js.eth.getTransactionCount(address, 'latest');
-  contract.methods.mint(accounts[0],"Marc").send({from:accounts[0]});
+  console.log("nonce: " + nonce);
+  contract.methods.modifyToken(accounts[0],name).send({from:accounts[0]}).then(function()
+  {
+    window.location.href = "./danke.html";
+  }).catch(function(error)
+  {
+    console.log(error);
+  });
 }
 
-function connect()
+async function connect()
 {
-  console.log("connecting")
+  console.log("connecting");
   let name = document.getElementById("name").value;
-  console.log(name)
+  console.log(name);
+
   if(name.length > 0)
   {
-    window.ethereum.enable().then(function(){
-      window.location.href = "captcha.html";
-    })
+    await window.ethereum.enable().then(function(){
+      buyNFT(name);
+    });
   }
 }
+
+
+

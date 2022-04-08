@@ -24,6 +24,9 @@ h1 {
 .black {
   color: #161616;
 }
+.bg-black {
+  background-color: #161616;
+}
 
 .light {
   color: #78f9e6;
@@ -114,7 +117,7 @@ div.rightside {
 /*******Sections Ende*******/
 
 .form {
-  color:#161616;
+  color: #161616;
   padding-top: 5%;
   padding-left: 10%;
   padding-bottom: 1%;

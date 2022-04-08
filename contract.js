@@ -56,5 +56,15 @@ async function connect()
   }
 }
 
-
-
+async function showNFT()
+{
+  let pubkey = document.getElementById("pubkey");
+  let name = document.getElementById("name");
+  let date = document.getElementById("date");
+  
+  let title = await contract.methods.title().call();
+  let thename = await contract.methods.name().call();
+  let datemillis = await contract.methods.buydate().call();
+  pubkey.innerHTML = address;
+  name.innerHTML = title + "  " + thename;
+}

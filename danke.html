@@ -7,10 +7,30 @@
     <link rel="stylesheet" href="style.css" />
     <title>Dont Buy this NFT Landing Page</title>
   </head>
-  <body>
+  <body style="background-color: black;">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+    <script src="contract.js"></script>
+    <script>
+      function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+      }
+
+      windonload = delay(500).then(() => showNFT());
+
+    </script>
+    <style>
+      p{
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        font-size: 40px;
+      }
+    </style>
     <section>
-      <h1>Vielen Dank für Ihren Einkauf</h1>
-      </div>
+      <h1>Vielen Dank, aber has du nichts gelernt?</h1>
+      <br>
+      <p id="name"></p>
+      <p id="pubkey"></p>
+      <p id="date"></p>
     </section>
     <section2> </section2>
   </body>

@@ -6,6 +6,11 @@
   font-family: Helvetica, sans-serif;
 }
 
+html{
+  
+  background: #161616;
+}
+
 /********* H1 Klassen*****/
 h1 {
   padding-top: 5%;
@@ -32,7 +37,6 @@ section {
   width: 55%;
   min-height: 100vh;
   align-items: center;
-  background: #161616;
 }
 
 .section2 {
@@ -57,7 +61,7 @@ section {
 }
 /*******Sections Ende*******/
 
-form {
+.form {
   color:#161616;
   padding-top: 5%;
   padding-left: 10%;
@@ -75,6 +79,8 @@ input.field {
   border: none;
   border-radius: 10px;
   font-size: 40px; 
+  max-width: 80%;
+  max-height: 50px;
 }
 
 label {

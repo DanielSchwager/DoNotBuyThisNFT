@@ -1,22 +1,32 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-contract Dontbuy {
-  address public owner;
-  string public name;
-  string public title;
-  uint256 public buydate;
+import "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
+//import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
-  constructor() public {
-    owner = address(0x0);
-    name = "";
-    title = "Bamboozle Victim";
-    buydate = block.timestamp;
+contract Dontbuy is ERC721URIStorage{
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
+
+  constructor() ERC721("DontBuyThisNFT", "DBT") {
+    MintNFT(address(0x814bB9f41045C7fb273Fef84bDDb3059D9f8bB28), "./NFT/NFT.json");
   }
-  
-    function modifyToken(address publickey, string memory newname) public {
-        owner = publickey;
-        name = newname;
-        buydate = block.timestamp;
-    }
+
+
+
+  function MintNFT(address owner, string memory tokenURI)
+      public
+      returns (uint256)
+  {
+      _tokenIds.increment();
+
+      uint256 newItemId = _tokenIds.current();
+      _mint(owner, newItemId);
+      _setTokenURI(newItemId, tokenURI);
+
+      return newItemId;
+  }
+
 }

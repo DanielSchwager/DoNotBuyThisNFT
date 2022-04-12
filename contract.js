@@ -24,15 +24,32 @@ fetch("build/contracts/Dontbuy.json")
   })
   .catch(error => console.log(error));
 
-async function buyNFT(name) {
+async function MintNFT(name) {
+
   accounts = await web3js.eth.getAccounts();
   nonce = await web3js.eth.getTransactionCount(address, 'latest');
-  contract.methods.modifyToken(accounts[0],name).send({from:accounts[0]}).then(function()
+
+  console.log("Setting up MintNFT ")
+  let jsonobj = {
+    ownerPublicKey: accounts[0],
+    name: "DontBuyThisNFT",
+    title: "Bamboozle Victim",
+    ownerName: name,
+    transactionCount: nonce
+  }
+
+  contract.methods.MintNFT(accounts[0],JSON.stringify(jsonobj)).send({from:accounts[0]}).then(function()
   {
+
+    //bug: then function never gets called (promise never resolves after metamask confirmation for some reason)
+    console.log("mint transaction success, moving on");
     window.location.href = "./danke.html";
+    return;
   }).catch(function(error)
   {
+    console.log("mint transaction failed");
     console.log(error);
+    return;
   });
 }
 
@@ -51,7 +68,7 @@ async function connect()
     age.length > 0)
   {
     await window.ethereum.enable().then(function(){
-      buyNFT(name);
+      MintNFT(name);
     });
   }
 }
@@ -61,10 +78,12 @@ async function showNFT()
   let pubkey = document.getElementById("pubkey");
   let name = document.getElementById("name");
   let date = document.getElementById("date");
-  
+
+  /* todo: refactor this, to read data out of the nft data (tokenURI)
   let title = await contract.methods.title().call();
   let thename = await contract.methods.name().call();
   let datemillis = await contract.methods.buydate().call();
   pubkey.innerHTML = address;
   name.innerHTML = title + "  " + thename;
+  */
 }
